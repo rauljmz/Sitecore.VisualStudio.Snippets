@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>EditContext</Title>
+      <Shortcut>scEditContext</Shortcut>
+      <Description>Insert or surround with a using containing an Edit Context to modify an item</Description>
+      <Author>RJ</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false">
+          <ID>editcontext</ID>
+          <Function>SimpleTypeName(Sitecore.Data.Items.EditContext)</Function>
+        </Literal>
+        <Object>
+          <ID>item</ID>
+          <Type>Sitecore.Data.Items.Item</Type>
+          <Default>item</Default>
+          <ToolTip>item object</ToolTip>
+        </Object>
+      </Declarations>
+      <Code Language="CSharp" Kind="method body">
+        <![CDATA[using(new $editcontext$($item$)) 
+        {
+          $end$ $selected$
+        }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Datasource Item</Title>
+      <Shortcut>scDatasource</Shortcut>
+      <Description>Retrieve the datasource from the Rendering Context</Description>
+      <Author>RJ</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false">
+          <ID>renderingcontext</ID>
+          <Function>SimpleTypeName(Sitecore.Mvc.Presentation.RenderingContext)</Function>
+        </Literal>
+        <Literal>
+          <ID>datasourceItem</ID>
+          <Default>datasourceItem</Default>
+          <ToolTip>Variable name</ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp" Kind="method body">
+        <![CDATA[var $datasourceItem$ = $renderingcontext$.Current.Rendering.Item;]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

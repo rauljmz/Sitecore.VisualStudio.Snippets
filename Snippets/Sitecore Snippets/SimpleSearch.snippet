@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Simple ContentSearch</Title>
+      <Shortcut>scSearch</Shortcut>
+      <Description>Stub for a simple search</Description>
+      <Author>RJ</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false">
+          <ID>renderingcontext</ID>
+          <Function>SimpleTypeName(Sitecore.Mvc.Presentation.RenderingContext)</Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>contentsearchmanager</ID>
+          <Function>SimpleTypeName(Sitecore.ContentSearch.ContentSearchManager)</Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>searchresulttype</ID>
+          <Function>SimpleTypeName(Sitecore.ContentSearch.SearchTypes.SearchResultItem)</Function>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp" Kind="method body">
+        <![CDATA[var index_name = string.Format("sitecore_{0}_index", $renderingcontext$.Current.ContextItem.Database.Name.ToLower());
+            var index = $contentsearchmanager$.GetIndex(index_name);
+            using(var searchContext = index.CreateSearchContext())
+            {
+                var searchExpression = searchContext.GetQueryable<$searchresulttype$>()
+                    .Where(i => true) // TODO: add conditions
+                    ;
+                var searchResults = searchExpression.GetResults();
+                $end$
+            }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

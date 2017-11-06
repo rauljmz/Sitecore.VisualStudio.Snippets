@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Property to render field</Title>
+      <Shortcut>scPropRender</Shortcut>
+      <Description>Inserts code for creating a property with a getter to render an item field</Description>
+      <Author>RJ</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>propertyName</ID>
+          <ToolTip>Name of the property</ToolTip>
+          <Default>Property</Default>
+        </Literal>
+        <Literal>
+          <ID>fieldName</ID>
+          <ToolTip>Name of the field</ToolTip>
+          <Default>myField</Default>
+        </Literal>
+        <Literal Editable="false">
+          <ID>htmlstring</ID>
+          <Function>SimpleTypeName(System.Web.HtmlString)</Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>renderingcontext</ID>
+          <Function>SimpleTypeName(Sitecore.Mvc.Presentation.RenderingContext)</Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>fieldrenderer</ID>
+          <Function>SimpleTypeName(Sitecore.Web.UI.WebControls.FieldRenderer)</Function>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp" Kind="method decl">
+        <![CDATA[public $htmlstring$ $propertyName$ 
+        {
+          get
+          {
+            return new $htmlstring$($fieldrenderer$.Render($renderingcontext$.Current.Rendering.Item,"$fieldName$"));
+          }
+        }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

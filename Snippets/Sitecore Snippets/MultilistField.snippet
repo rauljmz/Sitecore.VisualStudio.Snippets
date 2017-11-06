@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Multilist field iterator</Title>
+      <Shortcut>scMultilistIterator</Shortcut>
+      <Description>Inserts code for getting multilist field items</Description>
+      <Author>RJ</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>fieldname</ID>
+          <ToolTip>Name of the field</ToolTip>
+          <Default>myfield</Default>
+        </Literal>
+        <Literal>
+          <ID>fieldVariableName</ID>
+          <ToolTip>Name of the field variable</ToolTip>
+          <Default>fld</Default>
+        </Literal>
+        <Literal Editable="false">
+          <ID>multilistFieldType</ID>
+          <Function>SimpleTypeName(Sitecore.Data.Fields.MultilistField)</Function>
+        </Literal>
+        <Object>
+          <ID>item</ID>
+          <Type>Sitecore.Data.Items.Item</Type>
+          <Default>item</Default>
+          <ToolTip>item object</ToolTip>
+        </Object>
+      </Declarations>
+      <Code Language="CSharp" Kind="method body">
+        <![CDATA[$multilistFieldType$ $fieldVariableName$ = $item$.Fields["$fieldname$"];
+        if($fieldVariableName$ != null)
+        {
+          foreach(var item in $fieldVariableName$.GetItems())
+            { 
+               $end$
+            }
+        }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

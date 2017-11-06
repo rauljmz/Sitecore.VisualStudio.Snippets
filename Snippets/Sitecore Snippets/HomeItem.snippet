@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Home Item</Title>
+      <Shortcut>scHome</Shortcut>
+      <Description>Inserts code for getting the home item of the context site</Description>
+      <Author>RJ</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false">
+          <ID>context</ID>
+          <Function>SimpleTypeName(Sitecore.Context)</Function>
+        </Literal>
+        <Literal>
+          <ID>homeItem</ID>
+          <Default>homeItem</Default>
+          <ToolTip>Variable name</ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp" Kind="method body">
+        <![CDATA[var $homeItem$ = $context$.Database.GetItem($context$.Site.StartPath);]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

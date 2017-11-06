@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Field Renderer</Title>
+      <Shortcut>scRender</Shortcut>
+      <Description>Render an item field in c# code</Description>
+      <Author>RJ</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>fieldName</ID>
+          <ToolTip>Name of the field</ToolTip>
+          <Default>myField</Default>
+        </Literal>
+        <Literal Editable="false">
+          <ID>fieldrenderer</ID>
+          <Function>SimpleTypeName(Sitecore.Web.UI.WebControls.FieldRenderer)</Function>
+        </Literal>
+        <Object>
+          <ID>item</ID>
+          <Type>Sitecore.Data.Items.Item</Type>
+          <Default>item</Default>
+          <ToolTip>item object</ToolTip>
+        </Object>
+      </Declarations>
+      <Code Language="CSharp" Kind="method body">
+        <![CDATA[$fieldrenderer$.Render($item$,"$fieldName$");]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Field Helper</Title>
+      <Shortcut>scHtmlField</Shortcut>
+      <Description>Inserts code for a field helper</Description>
+      <Author>RJ</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>fieldname</ID>
+          <ToolTip>Name of the field</ToolTip>
+          <Default>myfield</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="HTML">
+        <![CDATA[@Html.Sitecore().Field("$fieldname$")$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Field Helper Image</Title>
+      <Shortcut>scHtmlField</Shortcut>
+      <Description>Inserts code for a field helper with image manipulation parameters</Description>
+      <Author>RJ</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>fieldname</ID>
+          <ToolTip>Name of the field</ToolTip>
+          <Default>myfield</Default>
+        </Literal>
+        <Literal>
+          <ID>height</ID>
+          <ToolTip>Max height in pixels</ToolTip>
+          <Default>100</Default>
+        </Literal>
+        <Literal>
+          <ID>width</ID>
+          <ToolTip>Max width in pixels</ToolTip>
+          <Default>200</Default>
+        </Literal>
+        <Literal>
+          <ID>class</ID>
+          <ToolTip>Class name for img tag</ToolTip>
+          <Default>image</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="HTML">
+        <![CDATA[@Html.Sitecore().Field("$fieldname$", new {@class = "$class$", mw = $width$, mh = $height$})$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

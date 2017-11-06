@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>User Switcher</Title>
+      <Shortcut>scUserSwitcher</Shortcut>
+      <Description>Insert or surround with a using with a User Switcher</Description>
+      <Author>RJ</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>username</ID>
+          <Default>sitecore\\admin</Default>
+          <ToolTip>Name of the user to impersonate</ToolTip>
+        </Literal>
+        <Literal Editable="false">
+          <ID>user</ID>
+          <Function>SimpleTypeName(Sitecore.Security.Accounts.User)</Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>userswitcher</ID>
+          <Function>SimpleTypeName(Sitecore.Security.Accounts.UserSwitcher)</Function>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp" Kind="method body">
+        <![CDATA[using(new $userswitcher$($user$.FromName("$username$",false))) 
+        {
+          $end$ $selected$
+        }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
