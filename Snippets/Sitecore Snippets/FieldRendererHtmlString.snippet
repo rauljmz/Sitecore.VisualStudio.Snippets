@@ -3,9 +3,9 @@
     xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>GetItemUrl</Title>
-      <Shortcut>scUrl</Shortcut>
-      <Description>Inserts code for getting the url of an item</Description>
+      <Title>Field Renderer inside an HtmlString</Title>
+      <Shortcut>scRenderHtmlString</Shortcut>
+      <Description>Render an item field in c# code inside an HtmlString</Description>
       <Author>RJ</Author>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
@@ -13,9 +13,18 @@
     </Header>
     <Snippet>
       <Declarations>
+        <Literal>
+          <ID>fieldName</ID>
+          <ToolTip>Name of the field</ToolTip>
+          <Default>myField</Default>
+        </Literal>
         <Literal Editable="false">
-          <ID>linkmanager</ID>
-          <Function>SimpleTypeName(Sitecore.Links.LinkManager)</Function>
+          <ID>fieldrenderer</ID>
+          <Function>SimpleTypeName(Sitecore.Web.UI.WebControls.FieldRenderer)</Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>htmlstring</ID>
+          <Function>SimpleTypeName(System.Web.HtmlString)</Function>
         </Literal>
         <Object>
           <ID>item</ID>
@@ -25,7 +34,7 @@
         </Object>
       </Declarations>
       <Code Language="CSharp" Kind="method body">
-        <![CDATA[$linkmanager$.GetItemUrl($item$)$end$]]>
+        <![CDATA[new $htmlstring$($fieldrenderer$.Render($item$,"$fieldName$"))$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>
