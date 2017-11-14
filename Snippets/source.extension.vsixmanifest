@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Snippets.Raul Jimenez.f4e1c326-1d64-4806-bfab-ea7987ba099c" Version="1.0" Language="en-US" Publisher="Raul Jimenez" />
-    <DisplayName>Snippets</DisplayName>
-    <Description>Empty VSIX Project.</Description>
+    <Identity Id="Snippets.Integrale.f4e1c326-1d64-4806-bfab-ea7987ba099c" Version="1.0" Language="en-US" Publisher="Integrale" />
+    <DisplayName>Sitecore Snippets</DisplayName>
+    <Description>Installs C# and HTML Snippets for Sitecore development.</Description>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />
