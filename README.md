@@ -26,6 +26,7 @@ The Kind attribute in the CodeSnippet element is ignored. This allows to incorre
 ## Available snippets
 You can use the Snippet Manager in Visual Studio to see the available snippets. All snippets start with the prefix "sc". Press TAB twice to use the snippet. A few of the snippets can also be used as surround snippets (Ctrl+K,S).
 
+### C# Snippets
 * scDatasource - reference to the Datsource (defaults to context item) in code, typically in a controller rendering.
 * scEditContext - using clause with an EditContext for modifying values in an item. Can be used as a surround snippet.
 * scField - obtain a reference to a field object of an item. By default it uses a Field object but it is a placeholder so you can modify the class to use a more specific field type (ImageField, ReferenceField, etc.)
@@ -40,3 +41,5 @@ You can use the Snippet Manager in Visual Studio to see the available snippets. 
 * scUrl - add a reference to the LinkManager.GetItemUrl to obtain a string with the href.
 * scUserSwitcher - add a user switcher impersonating a known user name. Can be used as a surround snippet.
 
+### HTML Snippets
+* scHtmlField - add an HTML helper with Field extension method. There is a alternate version with some common image manipulation parameters.
