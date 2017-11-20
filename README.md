@@ -3,7 +3,7 @@ This project includes a collection of code snippets for some of the most common 
 The snippets are packaged inside a *.vsix Visual Studio Package for ease of installation.
 
 ## Installation
-Download and execute the [vsix file](https://github.com/rauljmz/Sitecore.Snippets/output/Sitecore.Snippets.vsix).
+Download and execute the [vsix file](/output/Sitecore.Snippets.vsix).
 
 If you don't want to install all the snippets, you can also import individual ones using the *Code Snippets Manager* in Visual Studio.
 
